@@ -1,14 +1,9 @@
 
 import {
   LayoutDashboard,
-  Users,
-  MessageSquare,
-  UserRound,
-  Megaphone,
   ChartNoAxesCombined,
   Settings,
-  ChevronLeft,
-  ChevronRight,
+
 } from "lucide-react";
 
 const navigation = [

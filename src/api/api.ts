@@ -1,9 +1,13 @@
+
 import type { RankingResponse } from "../types/creatorType";
 import type { ChatterResponse, FanCountResponse } from "../types/fanType";
 import type { TransactionResponse } from "../types/transactionType";
 
+const API_BASE_URL =
+    import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export async function getTransactions(): Promise<TransactionResponse> {
-    const response = await fetch("http://localhost:3000/api/transactions");
+    const response = await fetch(`${API_BASE_URL}/api/transactions`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch transactions");
@@ -13,7 +17,7 @@ export async function getTransactions(): Promise<TransactionResponse> {
 }
 
 export async function getFanCounts(): Promise<FanCountResponse> {
-    const response = await fetch("http://localhost:3000/api/fans");
+    const response = await fetch(`${API_BASE_URL}/api/fans`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch fan counts");
@@ -23,7 +27,7 @@ export async function getFanCounts(): Promise<FanCountResponse> {
 }
 
 export async function getRankings(): Promise<RankingResponse> {
-    const response = await fetch("http://localhost:3000/api/rankings");
+    const response = await fetch(`${API_BASE_URL}/api/rankings`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch creator rankings");
@@ -34,7 +38,7 @@ export async function getRankings(): Promise<RankingResponse> {
 
 export async function getChatters(days: number): Promise<ChatterResponse> {
     const response = await fetch(
-        `http://localhost:3000/api/chatters?days=${days}`
+        `${API_BASE_URL}/api/chatters?days=${days}`
     );
 
     if (!response.ok) {
