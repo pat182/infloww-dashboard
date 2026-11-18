@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+// const creatorRoutes = require("./routes/creatorRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const fanRoutes = require("./routes/fanRoutes");
 const rankingRoutes = require("./routes/rankingRoutes");
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
     });
 });
 
+// app.use("/api/creators", creatorRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/fans", fanRoutes);
 app.use("/api/rankings", rankingRoutes);
